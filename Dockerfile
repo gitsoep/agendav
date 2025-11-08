@@ -1,6 +1,6 @@
 ARG PHP_VERSION=8.4
 
-FROM debian:-slim as downloader
+FROM debian:trixie-slim as downloader
 
 ENV AGENDAV_VERSION 2.6.0
 
@@ -11,7 +11,7 @@ RUN cd /tmp && \
     mv /tmp/agendav-$AGENDAV_VERSION /tmp/agendav
 
 
-FROM php:${PHP_VERSION}-apache-
+FROM php:${PHP_VERSION}-apache-trixie
 
 MAINTAINER Soep <github@soep.org>
 
