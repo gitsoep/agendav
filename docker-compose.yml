@@ -1,5 +1,3 @@
-version: "2"
-
 services:
   agendav:
     image: ghcr.io/nagimov/agendav-docker:latest
@@ -8,11 +6,13 @@ services:
       - AGENDAV_SERVER_NAME=127.0.0.1
       - AGENDAV_TITLE=Welcome to Example Agendav Server
       - AGENDAV_FOOTER=Hosted by Example Company
-      - AGENDAV_CALDAV_SERVER=https://baikal.example.com/cal.php
-      - AGENDAV_CALDAV_PUBLIC_URL=https://baikal.example.com
+      - AGENDAV_CALDAV_SERVER=https://caldav.example.com/cal.php
+      - AGENDAV_CALDAV_PUBLIC_URL=https://caldav.example.com
+      - AGENDAV_PROXY_IPS=127.0.0.1
       - AGENDAV_TIMEZONE=UTC
       - AGENDAV_LANG=en
       - AGENDAV_LOG_DIR=/tmp/
       - AGENDAV_WEEKSTART=1
     ports:
       - "80:8080"
+    restart: unless-stopped

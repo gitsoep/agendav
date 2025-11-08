@@ -13,7 +13,7 @@ RUN cd /tmp && \
 
 FROM php:${PHP_VERSION}-apache-bullseye
 
-MAINTAINER Ruslan Nagimov <nagimov@outlook.com>
+MAINTAINER Soep <github@soep.org>
 
 ENV APACHE_RUN_USER=www-data
 ENV APACHE_RUN_GROUP=www-data
